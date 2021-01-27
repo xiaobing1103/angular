@@ -99,7 +99,8 @@
   <input type="text" [(ngModel)]="password">
   <button (click)="chlickFn()">登录</button>
 </div>
-<h1>用户名：{{username}}</h1>
+<!-- 过滤器转换为大写 -->
+<h1>用户名：{{username | uppercase}}</h1>
 <h1>密码:{{password}}</h1>
 
 

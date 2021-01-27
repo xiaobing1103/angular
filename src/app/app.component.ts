@@ -75,4 +75,8 @@ export class AppComponent {
     console.log(input1)
     console.log(input2)
   }
+  student1:object ={
+    name:"老陈",
+    age:"30"
+  }
 }
