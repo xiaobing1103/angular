@@ -75,8 +75,16 @@ export class AppComponent {
     console.log(input1)
     console.log(input2)
   }
-  student1:object ={
+  student1 ={
     name:"老陈",
     age:"30"
   }
+  time=new Date();
+
+// 不明原因不能提交表单
+  eventFn(text:any){
+    console.log(text);
+  }
+  xingming="admin";
+  mima="123456";
 }

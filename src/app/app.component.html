@@ -95,6 +95,8 @@
 
   <label for="">用户名</label>
   <input type="text" [(ngModel)]="username">
+
+
   <label for="">密码</label>
   <input type="text" [(ngModel)]="password">
   <button (click)="chlickFn()">登录</button>
@@ -108,6 +110,7 @@
 <div>
   <label for="">用户名</label>
   <input #input1 type="text">
+  <input type="text" [(ngModel)]="student1.name">
 </div>
 
 
@@ -118,4 +121,15 @@
 
 <button   (click)="getContent(input1.value,input2.value)">获取账号密码</button>
 <!-- 使用过滤器将对象转换成json的格式输出 -->
+<!-- 将这个数据与双向数据绑定 -->
 <h1>{{student1|json}}</h1>
+<!-- 使用过滤器将时间过滤掉 -->
+<h1>显示时间{{time|date:"20yy年MM月dd日hh时mm分ss秒"}}</h1>
+
+
+<!--  -->
+<form action="" #formobj='ngForm'>
+  <input type="text" [(ngModel)]="xingming" name="xingming">
+  <input type="text" [(ngModel)]="mima" name="mima">
+  <button (click)='eventFn(formobj)'>按钮</button>
+</form>
