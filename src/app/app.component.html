@@ -101,3 +101,18 @@
 </div>
 <h1>用户名：{{username}}</h1>
 <h1>密码:{{password}}</h1>
+
+
+<!-- 可以使用一下这种方式来绑定   要注意的是这里input1的优先级是要比ts里面的优先级更高的,所以这里即使你在ts文件里设置了同名的变量这里也是不会被覆盖的 -->
+<div>
+  <label for="">用户名</label>
+  <input #input1 type="text">
+</div>
+
+
+<div>
+  <label for="">密码</label>
+  <input #input2 type="text">
+</div>
+
+<button   (click)="getContent(input1.value,input2.value)">获取账号密码</button>
