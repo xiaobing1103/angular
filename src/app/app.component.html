@@ -1,0 +1,71 @@
+<h2>{{title}}</h2>
+<h1>1+1={{1+1}}</h1>
+<app-news></app-news>
+<h1>3+4={{sum(3,4)}}</h1>
+<!-- 第一种设置方式 -->
+<button class="{{classStr}}">按钮</button>
+<h1 class="abc" class="{{classStr}}">class1</h1>
+<h1 [class]="classStr">class2</h1>
+<h1 [attr.class]="classStr">class3</h1>
+<!-- <h1 data-index="{{msg}}"></h1> -->
+<h1 [attr.data-index]="msg">msg</h1>
+
+<!-- 变量类型 -->
+<h1 class=""></h1>
+
+<!-- 字符串模式 -->
+<h1 [class]="classStr">class4</h1>
+<h1 [class]="classObj">class5</h1>
+
+
+<h1 [class]="{bgBlue:isShow}">class6</h1>
+
+<!-- 数组模式 -->
+<h1 [class]="['bgBlue','active','abc']">class7</h1>
+
+<h1 [class]="classArr">class8</h1>
+
+
+
+<!-- style -->
+<!-- style表达式的类型 -->
+<!-- 字符串变量 -->
+<h1 [style]="styleStr"></h1>
+<h1 [style]="styleObj"></h1>
+<!-- 数组的模式已经被废弃了 -->
+<h1 [style]="styleArr">fff</h1>
+
+<!-- vue没有的样式方式 -->
+<h1 [style.background]="color">1111</h1>
+<h1 [style.width.px]="px">13123123</h1>
+
+
+<!-- 事件绑定 由等号左侧写小括号加上事件名称,右边写调用的事件函数-->
+<button (click)="changeColor()">改变颜色</button>
+<!-- 对当前的按钮进行颜色的修改 -->
+<button (click)="changeButton($event)">改变按钮</button>
+
+<!-- 条件的渲染
+  person如果是广东人
+  就显示广东人的疫情信息
+-->
+<div *ngIf="person=='广东人'">广东：1000人</div>
+<div *ngIf="person=='湖北人'">湖北：40000人</div>
+
+<button (click)="togglePerson()">切换身份</button>
+
+<!-- 这里使用的条件渲染,会移除document,添加进DOM都会消耗性能 -->
+<!-- 使用style进行条件渲染,如果需要频繁的切换内容,那么需要style来完成条件的渲染 -->
+<div [style.display]="person=='广东人'?'block':'none'">广东：1000人</div>
+<div [style.display]="person=='湖北人'?'block':'none'">湖北：40000人</div>
+
+<!-- 循环语句的使用 -->
+<ul>
+  <li *ngFor="let item of Arr;let i = index" (click)="choosePerson(item,i)">{{i+1}}:姓名{{item}}</li>
+</ul>
+<!-- 列表循环获取索引值 -->
+<!-- 循环对象  不支持此类的写法 -->
+<!-- <ul>
+  <li *ngFor="let item of student">value:{{item}}</li>
+</ul> -->
+
