@@ -33,6 +33,7 @@
 <h1 [style]="styleStr"></h1>
 <h1 [style]="styleObj"></h1>
 <!-- 数组的模式已经被废弃了 -->
+
 <h1 [style]="styleArr">fff</h1>
 
 <!-- vue没有的样式方式 -->
@@ -52,6 +53,7 @@
 <div *ngIf="person=='广东人'">广东：1000人</div>
 <div *ngIf="person=='湖北人'">湖北：40000人</div>
 
+
 <button (click)="togglePerson()">切换身份</button>
 
 <!-- 这里使用的条件渲染,会移除document,添加进DOM都会消耗性能 -->
@@ -69,3 +71,33 @@
   <li *ngFor="let item of student">value:{{item}}</li>
 </ul> -->
 
+<!-- 条件渲染,匹配多种情况 -->
+<div [ngSwitch]="orderState">
+  <div *ngSwitchCase="'睡觉'">卧室</div>
+  <div *ngSwitchCase="'看电视'">客厅</div>
+  <div *ngSwitchCase="'吃饭'">餐厅</div>
+  <div *ngSwitchCase="'发呆'">阳台</div>
+  <div *ngSwitchDefault>厕所</div>
+</div>
+
+
+<div [ngSwitch]="orderState1">
+  <div *ngSwitchCase="1">待付款</div>
+  <div *ngSwitchCase="2">已付款</div>
+  <div *ngSwitchCase="3">发货</div>
+  <div *ngSwitchCase="4">已收货</div>
+  <div *ngSwitchDefault>丢失</div>
+</div>
+
+
+<!-- 数据的双向绑定用法 -->
+<div>
+
+  <label for="">用户名</label>
+  <input type="text" [(ngModel)]="username">
+  <label for="">密码</label>
+  <input type="text" [(ngModel)]="password">
+  <button (click)="chlickFn()">登录</button>
+</div>
+<h1>用户名：{{username}}</h1>
+<h1>密码:{{password}}</h1>

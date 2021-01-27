@@ -62,4 +62,13 @@ export class AppComponent {
     console.log(person, i);
     alert(`我喜欢第${i + 1}人${person}`);
   }
+
+  orderState="看电视";
+  orderState1="1";
+  username="angular的数据双向绑定";
+  password=""
+  chlickFn(){
+    console.log(this.username);
+    console.log(this.password)
+  }
 }

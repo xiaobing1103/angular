@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NewsComponent } from './component/news/news.component';
-
+import { FormsModule} from '@angular/forms'
 @NgModule({
   declarations: [AppComponent, NewsComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
