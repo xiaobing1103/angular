@@ -85,6 +85,20 @@ export class AppComponent {
   eventFn(text:any){
     console.log(text);
   }
+
+
   xingming="admin";
   mima="123456";
+  msgk="老陈";
+
+
+
+  sendchildMsg ="这是父组件给子元素的数据,希望在子组件中显示";
+
+  getChildMsg =""
+  
+  getEvent(event:any){
+    console.log(event)
+    this.getChildMsg =event.msg
+  }
 }

@@ -127,9 +127,22 @@
 <h1>显示时间{{time|date:"20yy年MM月dd日hh时mm分ss秒"}}</h1>
 
 
-<!--  -->
+<!--  注意这里如果需要使用在ngfrom表单里面使用双向数据绑定的话就需要使用name的属性来确定value里面的key值才可以-->
 <form action="" #formobj='ngForm'>
   <input type="text" [(ngModel)]="xingming" name="xingming">
   <input type="text" [(ngModel)]="mima" name="mima">
   <button (click)='eventFn(formobj)'>按钮</button>
 </form>
+
+
+<!-- 自定义管道符该如何操作 相当于自定义过滤器-->
+<h1>{{msgk|lcUppercase:"元":"123"}}</h1>
+
+
+
+
+
+
+<h1>子组件发来的消息:{{getChildMsg}}</h1>
+<app-child [item]="sendchildMsg" (childMsg)="getEvent($event)"></app-child>
+
