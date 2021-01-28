@@ -95,10 +95,13 @@ export class AppComponent {
 
   sendchildMsg ="这是父组件给子元素的数据,希望在子组件中显示";
 
-  getChildMsg =""
-  
+  getChildMsg ="这是一个初始化数据"
+
   getEvent(event:any){
     console.log(event)
     this.getChildMsg =event.msg
   }
+
+
+ 
 }
